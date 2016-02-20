@@ -32,18 +32,12 @@ def validateRow(a: Array[String], colSize: Integer):Unit={
         })
     
   }
-	def time[A](a: => A) = {
-		val now = System.currentTimeMillis
-		val result = a
-		val micros = (System.currentTimeMillis - now)
-		println(micros)
-	}
 
   def main(args: Array[String]) {
 	
 	///val lines = scala.io.Source.fromFile(args(0)).getLines	
 
-	var a = Array.ofDim[String](args(1).toInt, args(0).toInt)
+	//var a = Array.ofDim[String](args(1).toInt, args(0).toInt)
 /*
 //	lines.foreach((row) => {
 //		a = a :+ row.split(",")
@@ -63,15 +57,16 @@ def validateRow(a: Array[String], colSize: Integer):Unit={
 
 */
 	var i=0
-val now = System.currentTimeMillis
+  val now = System.currentTimeMillis
 	println(now)
 
-    	for (ln <- io.Source.stdin.getLines){
+  for (ln <- io.Source.stdin.getLines){
 		//a(i)=ln.split(",")
-val lin = ln.split(",")
-		validateRow(lin, ln.length)
+    val lin = ln.split(",")
+		validateRow(lin, lin.length)
 		i = i + 1	
 	}	 
+
 	//println(ln)
 	
 //	val now = System.currentTimeMillis
